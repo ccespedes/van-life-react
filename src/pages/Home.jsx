@@ -3,7 +3,7 @@ export default function Home() {
     <>
       <div className="hero">
         <div className="hero-title">
-          You got the travel plans, we got the travel vans.
+          You got BIG travel plans, we got the travel vans.
         </div>
         <div className="hero-text">
           Add adventure to your life by joining the #vanlife movement.
