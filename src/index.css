@@ -8,10 +8,16 @@ body {
   padding: 0;
   background-color: #fff7ed;
   font-family: "Inter";
+  color: #161616;
+}
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
-  margin-top: 30px;
   font-weight: 700;
   line-height: 40px;
 }
@@ -23,6 +29,11 @@ h2 {
 
 p {
   line-height: 24px;
+  color: #161616;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
 }
 
 .btn {
@@ -37,7 +48,7 @@ p {
 
 .main-container {
   max-width: 980px;
-  margin: auto;
+  margin: 0 auto;
   padding: 20px 30px;
 }
 
@@ -59,17 +70,24 @@ p {
 
 .nav-menu {
   display: flex;
+  justify-content: space-between;
+  width: 200px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.nav-menu a {
+  display: flex;
+  text-decoration: none;
   font-weight: 500;
   font-size: 16px;
   color: #4d4d4d;
 }
 
-.nav-menu > a {
-  padding-left: 20px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-  color: #4d4d4d;
+a.active-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
 }
 
 .hero {
@@ -120,7 +138,7 @@ p {
 .explore-btn {
   background-color: #161616;
   margin-top: 30px;
-  text-decoration: none;
+  color: #ffffff;
 }
 
 .explore-btn > a {
@@ -131,16 +149,16 @@ p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 
 .van-tile > img {
   width: 100%;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
-.van-tile {
-  border-radius: 5px;
+.van-tile a {
+  text-decoration: none;
 }
 
 .van-info-text {
@@ -152,6 +170,7 @@ p {
 .van-info-text > h3 {
   font-size: 20px;
   font-weight: 600;
+  color: #161616;
 }
 
 .van-type {
@@ -211,6 +230,25 @@ i[class*="van-type-"] {
   padding: 7px 14px;
 }
 
+.van-detail {
+  margin-bottom: 50px;
+}
+
+.van-detail-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.van-price {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.van-price span {
+  font-weight: 800;
+}
+
 .footer {
   display: flex;
   background-color: #252525;
@@ -219,6 +257,120 @@ i[class*="van-type-"] {
   align-items: center;
   justify-content: center;
   margin-top: auto;
+  flex-shrink: 0;
+}
+
+.host-menu {
+  display: flex;
+  font-weight: 500;
+  font-size: 14px;
+  color: #4d4d4d;
+}
+
+.host-menu > a {
+  padding-right: 20px;
+  font-weight: 500;
+  color: #4d4d4d;
+}
+
+.host-van-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.host-van-container h1 {
+  margin-right: auto;
+}
+
+.host-van-tile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.host-van-tile img {
+  border-radius: 5px;
+  height: 66px;
+  margin-right: 20px;
+}
+
+.host-van-tile-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+}
+
+.host-van-tile-info h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.host-van-tile-info p {
+  color: #4d4d4d;
+  margin: 0;
+}
+
+.host-van-tile-button {
+  padding: 10px;
+  background-color: #4d4d4d;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.host-van-detail-container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin-top: 30px;
+}
+
+.host-van-detail-top {
+  display: flex;
+}
+
+.host-van-detail-top h3 {
+  font-size: 18px;
+}
+
+.host-van-detail-top h3 span {
+  font-weight: 400;
+}
+
+.host-van-detail-top img {
+  border-radius: 5px;
+  margin-right: 20px;
+  height: 150px;
+}
+
+.host-van-detail-container p {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.host-van-detail-container p span {
+  font-weight: bold;
+}
+
+.host-van-detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.host-van-detail-info h3 {
+  margin: 0;
+}
+
+.host-van-detail-info h2 {
+  margin: 15px 0;
 }
 
 @media only screen and (min-width: 900px) {
