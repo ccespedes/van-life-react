@@ -46,6 +46,14 @@ a:-webkit-any-link {
   font-weight: 500;
 }
 
+.mt {
+  margin-top: 30px;
+}
+
+.mb {
+  margin-bottom: 30px;
+}
+
 .main-container {
   max-width: 980px;
   margin: 0 auto;
@@ -90,6 +98,17 @@ a.active-link {
   color: #161616;
 }
 
+.back-button {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin-top: 60px;
+}
+
+.back-button span:hover {
+  text-decoration: underline;
+}
+
 .hero {
   background-image: url(./assets/home-image.jpg);
   background-size: cover;
@@ -97,6 +116,13 @@ a.active-link {
   height: 500px;
   color: #ffffff;
   padding: 80px 40px;
+}
+
+.hero-container {
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-title {
@@ -118,6 +144,7 @@ a.active-link {
 .hero-btn {
   background-color: #ff8c38;
   width: 100%;
+  text-align: center;
 }
 
 .about-image {
@@ -163,18 +190,32 @@ a.active-link {
 
 .van-info-text {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
 }
 
 .van-info-text > h3 {
   font-size: 20px;
   font-weight: 600;
   color: #161616;
+  margin-bottom: 0;
+}
+
+.van-type-filter-btns {
+  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.van-type-filter-btns button {
+  margin-right: 20px;
+  height: 34px;
+}
+
+.van-type-filter-btns > a {
+  margin-right: 15px;
 }
 
 .van-type {
-  width: 100px;
   text-align: center;
   padding: 6px 26px;
   font-style: normal;
@@ -238,6 +279,7 @@ i[class*="van-type-"] {
   width: 100%;
   border-radius: 10px;
   margin-bottom: 40px;
+  margin-top: 30px;
 }
 
 .van-price {
@@ -263,7 +305,7 @@ i[class*="van-type-"] {
 .host-menu {
   display: flex;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   color: #4d4d4d;
 }
 
@@ -325,15 +367,17 @@ i[class*="van-type-"] {
 
 .host-van-detail-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   background-color: white;
   border-radius: 10px;
-  padding: 15px 25px;
+  padding: 25px;
   margin-top: 30px;
 }
 
 .host-van-detail-top {
   display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .host-van-detail-top h3 {
@@ -359,18 +403,45 @@ i[class*="van-type-"] {
   font-weight: bold;
 }
 
-.host-van-detail-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .host-van-detail-info h3 {
   margin: 0;
 }
 
 .host-van-detail-info h2 {
   margin: 15px 0;
+}
+
+.host-van-price p {
+  color: #ffffff;
+  user-select: none;
+}
+
+.host-van-price h2 {
+  font-weight: 500;
+}
+
+.host-van-price h2 span {
+  font-weight: 300;
+  color: #4d4d4d;
+}
+
+.host-van-photos img {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.host-van-photos p {
+  color: #ffffff;
+  user-select: none;
+}
+
+.back-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.back-container a {
+  text-align: center;
 }
 
 @media only screen and (min-width: 900px) {

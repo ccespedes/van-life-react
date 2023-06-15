@@ -15,13 +15,13 @@ export default function Nav() {
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "active-link" : null)}
-          to="/about"
+          to="about"
         >
           About
         </NavLink>
         <NavLink
           className={({ isActive }) => (isActive ? "active-link" : null)}
-          to="/vans"
+          to="vans"
         >
           Vans
         </NavLink>

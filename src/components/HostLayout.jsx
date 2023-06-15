@@ -4,32 +4,33 @@ export default function HostLayout() {
   const activeStyles = {
     textDecoration: "underline",
     color: "#161616",
+    fontWeight: "600",
   };
   return (
     <div className="main-container">
       <div className="host-menu">
         <NavLink
           style={({ isActive }) => (isActive ? activeStyles : null)}
-          to="/host/"
+          to="."
           end
         >
           Dashboard
         </NavLink>
         <NavLink
           style={({ isActive }) => (isActive ? activeStyles : null)}
-          to="/host/income"
+          to="income"
         >
           Income
         </NavLink>
         <NavLink
           style={({ isActive }) => (isActive ? activeStyles : null)}
-          to="/host/vans"
+          to="vans"
         >
           Vans
         </NavLink>
         <NavLink
           style={({ isActive }) => (isActive ? activeStyles : null)}
-          to="/host/reviews"
+          to="reviews"
         >
           Reviews
         </NavLink>
