@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { Outlet, useParams } from "react-router";
 import { Link, NavLink } from "react-router-dom";
-import vanData from "../../../vanData";
 
 export default function HostVanDetail() {
   const { id } = useParams();
   const [van, setVanData] = useState([]);
 
   useEffect(() => {
-    setVanData(vanData.data.vans[id - 1]);
+    fetch(`/api/host/vans/${id}`)
+      .then((res) => res.json())
+      .then((data) => setVanData(data.vans));
   }, []);
 
   const activeStyles = {
@@ -19,7 +20,7 @@ export default function HostVanDetail() {
 
   return (
     <div>
-      <Link to=".." relative="path" c lassName="back-button">
+      <Link to=".." relative="path" className="back-button">
         &larr; <span>Back to all vans</span>
       </Link>
       <div className="host-van-detail-container">

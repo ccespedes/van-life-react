@@ -1,20 +1,21 @@
 import { useParams, Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import vanData from "/vanData.js";
 
 export default function VanDetail() {
-  const { id } = useParams();
-  //const params = useParams();   <-- or we can use this. access via params.id
+  const params = useParams();
   const location = useLocation();
   console.log(location.state.search);
-  const search = location.state?.search || "";
-  const type = location.state?.type || "all";
 
   const [van, setVan] = useState(null);
 
   useEffect(() => {
-    setVan(vanData.data.vans[id - 1]);
-  }, [id]);
+    fetch(`/api/vans/${params.id}`)
+      .then((res) => res.json())
+      .then((data) => setVan(data.vans));
+  }, [params.id]);
+
+  const search = location.state?.search || "";
+  const type = location.state?.type || "all";
 
   return (
     <div className="main-container">

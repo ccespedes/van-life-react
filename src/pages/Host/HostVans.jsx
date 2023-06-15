@@ -1,22 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import vanData from "../../../vanData";
 
 export default function HostVans() {
-  const hostId = "123";
-  const [hostVans, setHostVans] = useState([]);
+  const [vans, setVans] = useState([]);
 
   useEffect(() => {
-    const vansHostData = vanData.data.vans;
-    setHostVans(
-      vansHostData.filter((van) => {
-        return van.hostId === hostId;
-      })
-    );
-    console.log(hostVans);
+    fetch("/api/host/vans")
+      .then((res) => res.json())
+      .then((data) => setVans(data.vans));
   }, []);
 
-  const vanElements = hostVans.map((van) => (
+  const vanElements = vans.map((van) => (
     <div key={van.id} className="host-van-tile">
       <img src={van.imageUrl} />
       <div className="host-van-tile-info">
@@ -33,7 +27,7 @@ export default function HostVans() {
     <div className="host-van-container">
       <h1>Your listed vans</h1>
       <div>View All</div>
-      {hostVans.length > 0 ? <>{vanElements}</> : <h2>Loading...</h2>}
+      {vans.length > 0 ? <>{vanElements}</> : <h2>Loading...</h2>}
     </div>
   );
 }

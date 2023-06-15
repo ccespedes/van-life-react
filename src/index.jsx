@@ -17,7 +17,7 @@ import HostVanPhotos from "./pages/Host/HostVanPhotos";
 import HostVanInfo from "./pages/Host/HostVanInfo";
 import PageNotFound from "./pages/PageNotFound";
 
-//import "./server";
+import "../server";
 
 function App() {
   return (

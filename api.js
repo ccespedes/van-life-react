@@ -1,12 +1,12 @@
-// import vanData from "/vanData.js";
-
-// export async function getVans() {
-//     const res = await vanData
-//     return vanData.data.vans
-// }
-
 export async function getVans() {
     const res = await fetch("/api/vans/")
+    if (!res.ok) {
+        throw {
+            message: "Failed to fetch vans",
+            statusText: res.statusText,
+            status: res.status
+        }
+    }
     const data = await res.json()
     return data.vans
 }
