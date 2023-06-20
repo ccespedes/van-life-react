@@ -1,16 +1,15 @@
-import { useState, useEffect } from "react";
-import { Outlet, useParams } from "react-router";
-import { Link, NavLink } from "react-router-dom";
+import { Outlet } from "react-router";
+import { Link, NavLink, useLoaderData } from "react-router-dom";
+import { getVans } from "../../../api";
+import { requireAuth } from "../../../utils";
+
+export async function loader({ params }) {
+  await requireAuth();
+  return getVans(params.id);
+}
 
 export default function HostVanDetail() {
-  const { id } = useParams();
-  const [van, setVanData] = useState([]);
-
-  useEffect(() => {
-    fetch(`/api/host/vans/${id}`)
-      .then((res) => res.json())
-      .then((data) => setVanData(data.vans));
-  }, []);
+  const van = useLoaderData();
 
   const activeStyles = {
     textDecoration: "underline",

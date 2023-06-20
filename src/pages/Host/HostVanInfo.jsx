@@ -7,7 +7,7 @@ export default function HostVanInfo() {
         <span>Name:</span> {van.name}
       </p>
       <p>
-        <span>Category:</span> {van.name}
+        <span>Category:</span> {van.type}
       </p>
       <p>
         <span>Description:</span> {van.description}
